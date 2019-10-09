@@ -421,7 +421,7 @@ module AttrEncrypted
         end
         if iv && !iv.empty?
           iv = iv.unpack(encode_iv).first if encode_iv
-          options[:iv] = iv
+          options[:iv] = iv[0..12]
         end
       end
 
